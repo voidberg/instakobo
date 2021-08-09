@@ -30,3 +30,8 @@ While true, the Pocket integration lacks some important features:
 * Make sure you have [NodeJS](https://nodejs.org/en/) installed.
 * Install InstaKobo: `npm i -g instakobo`.
 * Due to how the Instapaper API works, you're going to need an OAuth consumer token, which you can request [here](https://www.instapaper.com/main/request_oauth_consumer_token).
+* TBC
+
+## Future plans
+
+I plan on eventually creating something similar to [Wallabako](https://gitlab.com/anarcat/wallabako), that could run directly on the device and that could also be ported to Remarkable. 
