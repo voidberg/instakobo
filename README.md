@@ -23,7 +23,7 @@ I wanted to read my Instapaper articles on my Kobo devices, and there's nothing 
 While true, the Pocket integration lacks some important features:
 
 * It does not support tags, which is problematic when you have hundreds of articles.
-* You can't highlight articles.
+* You can't annotate articles.
 
 ## Getting started
 
