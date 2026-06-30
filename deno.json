@@ -27,7 +27,7 @@
   },
   "fmt": {
     "lineWidth": 100,
-    "exclude": ["CHANGELOG.md", ".release-please-manifest.json"]
+    "exclude": ["deno.json", "CHANGELOG.md", ".release-please-manifest.json"]
   },
   "lint": {
     "rules": {
