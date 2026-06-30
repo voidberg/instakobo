@@ -74,6 +74,19 @@ deno task dev --help   # run from a checkout
 deno task compile      # build your own binary for the current platform
 ```
 
+### macOS
+
+The binaries are ad-hoc signed but not yet notarized, so macOS Gatekeeper blocks them on first
+launch with "cannot be opened because the developer cannot be verified". Clear the quarantine flag
+after downloading:
+
+```sh
+xattr -d com.apple.quarantine ./instakobo
+```
+
+Or, in Finder, right-click the binary and choose Open the first time. (Notarization is planned,
+which will remove this step.)
+
 ## Getting started
 
 1. Instapaper's API needs an OAuth consumer key and secret. Register an application on the
