@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Format check
+        run: deno fmt --check
+
+      - name: Lint
+        run: deno lint
+
+      # Unit tests don't import @voidberg/quarto, so they run without the
+      # published library. The Kobo-database test self-skips when no fixture
+      # is present (it lives in the original instakobo repo).
+      - name: Test
+        run: deno test --allow-read --allow-write --allow-env
