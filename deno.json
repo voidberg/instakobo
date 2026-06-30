@@ -27,11 +27,17 @@
   },
   "fmt": {
     "lineWidth": 100,
-    "exclude": ["deno.json", "CHANGELOG.md", ".release-please-manifest.json"]
+    "exclude": [
+      "deno.json",
+      "CHANGELOG.md",
+      ".release-please-manifest.json"
+    ]
   },
   "lint": {
     "rules": {
-      "tags": ["recommended"]
+      "tags": [
+        "recommended"
+      ]
     }
   }
 }
