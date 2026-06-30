@@ -26,9 +26,8 @@ and images are missing from many articles.
 ## Features
 
 - Generate a `kepub` (or plain `EPUB`) for every saved article, organised by folder.
-- Groups articles into Kobo collections on-device: unfiled under `Instapaper`, foldered under
-  `Instapaper - <folder>` (via series metadata; needs the
-  [NickelSeries](https://github.com/pgaskin/NickelSeries) mod, ignored otherwise).
+- Adds series metadata so articles group under the **Series** tab (requires
+  [NickelSeries](https://github.com/pgaskin/NickelSeries)).
 - **No external `kepubify`**: Kobo conversion is built in via Quarto.
 - Sync reading progress and highlights back to Instapaper.
 - Optionally archive finished articles and remove them from the device (opt-in; off by default).
@@ -36,7 +35,7 @@ and images are missing from many articles.
 
 ## Screenshots
 
-| Articles on the Kobo                                             | A generated cover                                   |
+| Articles on Kobo                                                 | A generated cover                                   |
 | ---------------------------------------------------------------- | --------------------------------------------------- |
 | ![Generated articles in the Kobo library](assets/screen_001.png) | ![A generated article cover](assets/screen_002.png) |
 
@@ -47,18 +46,18 @@ My current workflow uses Dropbox:
 - Generate a `kepub` for each article into Rakuten's Dropbox folder
   (`Dropbox/Apps/Rakuten Kobo/Instapaper`).
 - Sync all articles, or some, on the eReader.
-- Use the Dropbox filter to see only the articles.
+- Use the **Dropbox** filter (or, with NickelSeries, the **Series** tab) to find your synced
+  articles.
 - Read on the device, add highlights.
 - Sync reading progress and highlights back to Instapaper, which then flow into Readwise and out to
   a PKM tool.
 - With `--archive --delete`, finished articles are archived on Instapaper and removed from the
   device.
 
-## Organising on the device
+## Organising the articles on the e-reader
 
 - **Stock firmware:** I recommend using the Dropbox or Google Drive integration just for this, as it
-  allows you to use the library's built-in source filter (e.g. "Dropbox") to view just your
-  articles.
+  allows you to use the library's built-in filter (e.g. "Dropbox") to view just your articles.
 - **With [NickelSeries](https://github.com/pgaskin/NickelSeries):** every article carries series
   metadata, so your Instapaper folders show up under the library's **Series** tab.
 
