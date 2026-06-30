@@ -1,0 +1,18 @@
+#!/bin/sh
+# Fast pre-push gate: catch the obvious breakage before it leaves your machine.
+# Bypass in a pinch with: git push --no-verify
+set -e
+
+echo "▶ fmt"
+deno fmt --check
+
+echo "▶ check"
+deno task check
+
+echo "▶ lint"
+deno lint
+
+echo "▶ test"
+deno task test
+
+echo "✓ pre-push checks passed"

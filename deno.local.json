@@ -1,0 +1,30 @@
+{
+  "name": "instakobo",
+  "version": "1.0.0",
+  "exports": "./main.ts",
+  "unstable": ["sloppy-imports"],
+  "tasks": {
+    "dev": "deno run -c deno.local.json --unstable-sloppy-imports --allow-env --allow-read --allow-write --allow-net main.ts",
+    "check": "deno check -c deno.local.json --unstable-sloppy-imports main.ts",
+    "test": "deno test -c deno.local.json --unstable-sloppy-imports --allow-read --allow-write --allow-env"
+  },
+  "imports": {
+    "@voidberg/quarto": "../quarto/src/index.ts",
+    "@cliffy/prompt": "jsr:@cliffy/prompt@^1.2.1",
+    "parse5": "npm:parse5@^7.2.1",
+    "fflate": "npm:fflate@^0.8.2",
+    "@jsquash/avif": "npm:@jsquash/avif@^2.1.1",
+    "@jsquash/jpeg": "npm:@jsquash/jpeg@^1.5.0",
+    "@jsquash/png": "npm:@jsquash/png@^3.1.1",
+    "@jsquash/webp": "npm:@jsquash/webp@^1.5.0",
+    "@resvg/resvg-wasm": "npm:@resvg/resvg-wasm@^2.6.2",
+    "@std/assert": "jsr:@std/assert@^1.0.0",
+    "@std/encoding": "jsr:@std/encoding@^1.0.0",
+    "@std/cli": "jsr:@std/cli@^1.0.0",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.0",
+    "@std/fmt": "jsr:@std/fmt@^1.0.0",
+    "@std/fs": "jsr:@std/fs@^1.0.0",
+    "@std/path": "jsr:@std/path@^1.0.0",
+    "sqlite": "https://deno.land/x/sqlite@v3.9.1/mod.ts"
+  }
+}

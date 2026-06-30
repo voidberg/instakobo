@@ -1,0 +1,20 @@
+{
+  "lsp": {
+    "deno": { "settings": { "deno": { "enable": true } } }
+  },
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["deno", "!vtsls", "!typescript-language-server", "!eslint"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "TSX": {
+      "language_servers": ["deno", "!vtsls", "!typescript-language-server", "!eslint"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "JSON": { "formatter": "language_server", "format_on_save": "on" },
+    "JSONC": { "formatter": "language_server", "format_on_save": "on" },
+    "Markdown": { "formatter": "language_server", "format_on_save": "on" }
+  }
+}

@@ -1,0 +1,22 @@
+.env
+*.log
+.DS_Store
+
+# Build output
+/instakobo
+/instakobo-*
+/dist/
+
+# Generated books
+/kepub/
+/kepubs/
+/epub/
+
+# Local-only dev scripts / scratch (not committed)
+/scratch/
+
+# fallow analysis cache
+/.fallow/
+
+# Personal backlog notes (not committed)
+/BACKLOG.md
