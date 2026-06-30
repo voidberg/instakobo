@@ -27,11 +27,16 @@
   },
   "fmt": {
     "lineWidth": 100,
-    "exclude": ["CHANGELOG.md", ".release-please-manifest.json"]
+    "exclude": [
+      "CHANGELOG.md",
+      ".release-please-manifest.json"
+    ]
   },
   "lint": {
     "rules": {
-      "tags": ["recommended"]
+      "tags": [
+        "recommended"
+      ]
     }
   }
 }
