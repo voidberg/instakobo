@@ -1,16 +1,34 @@
 name: Release
 
-# Build self-contained binaries for each platform when a version tag is pushed.
+# release-please opens/maintains a release PR from conventional commits. Merging
+# it bumps the version, updates the changelog, and creates the GitHub release and
+# tag - which then gates the binary build below (same run, so no token gotcha).
 # Requires @voidberg/quarto to be published to JSR first.
 on:
   push:
-    tags: ["v*"]
+    branches: ["main"]
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - name: Create release PR or GitHub release
+        id: release
+        uses: googleapis/release-please-action@v5
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
   build:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,6 +51,7 @@ jobs:
         run: |
           deno compile \
             --allow-env --allow-read --allow-write --allow-net \
+            --include src/assets \
             --target ${{ matrix.target }} \
             --output "instakobo-${{ matrix.target }}" \
             main.ts
@@ -43,4 +62,5 @@ jobs:
       - name: Upload to release
         uses: softprops/action-gh-release@v3
         with:
+          tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: instakobo-${{ matrix.target }}.tar.gz

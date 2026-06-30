@@ -26,7 +26,8 @@
     "sqlite": "https://deno.land/x/sqlite@v3.9.1/mod.ts"
   },
   "fmt": {
-    "lineWidth": 100
+    "lineWidth": 100,
+    "exclude": ["CHANGELOG.md", ".release-please-manifest.json"]
   },
   "lint": {
     "rules": {
