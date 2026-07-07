@@ -11,10 +11,8 @@ reads the device's own SQLite database to push progress and highlights back to I
 those articles to the device yourself, via sideloading or one of the integrations like Dropbox or
 Google Drive.
 
-I am currently working on a more seamless experience in the form of an application that can be
-installed directly on your device, paired with a self-hosted app, that can automatically download
-the articles and sync the highlights. There is also a version for the Remarkable tablets in the
-works.
+> **Note**: This will soon be replaced by a single binary that runs both directly on your Kobo and
+> on your computer, whichever you prefer. A version for reMarkable devices is also in the works.
 
 ## Why not use the built-in Instapaper integration?
 
